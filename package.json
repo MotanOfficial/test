@@ -1,0 +1,44 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8",
+    "electron-updater": "^6.3.9"
+  },
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "MyElectronApp",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MotanOfficial",
+        "repo": "test"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

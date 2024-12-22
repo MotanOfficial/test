@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Electron App</title>
+  </head>
+  <body>
+    <h1>Hello from Electron!</h1>
+    <div id="version"></div>
+    <script>
+      const { ipcRenderer } = require('electron');
+      ipcRenderer.on('app-version', (event, version) => {
+        document.getElementById('version').innerText = `Version: ${version}`;
+      });
+
+      // Request the version from the main process
+      ipcRenderer.send('get-app-version');
+    </script>
+  </body>
+</html>
